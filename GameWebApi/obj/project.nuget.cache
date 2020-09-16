@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nas1EsHrAbWpai9QXbKKnjstyFyxMDPn+WwyPGcpi7jNKCHROdJzFSt1xVT322uiwsPfnGO5VIF9kyncmA0z2w==",
+  "dgSpecHash": "XoFma7Zp9XV8ULbrojtlBjfmSjBvd8xAVVENDthHhgFYAqmrpindU3Lm6NPlAneFcWhstispa1auuVrWQvrCqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Juuso\\Desktop\\GameWebApi\\GameWebApi.csproj",
+  "projectFilePath": "C:\\GitHub\\Assignment3\\GameWebApi\\GameWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Juuso\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],

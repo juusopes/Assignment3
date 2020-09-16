@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Juuso\\Desktop\\GameWebApi\\GameWebApi.csproj": {}
+    "C:\\GitHub\\Assignment3\\GameWebApi\\GameWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Juuso\\Desktop\\GameWebApi\\GameWebApi.csproj": {
+    "C:\\GitHub\\Assignment3\\GameWebApi\\GameWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Juuso\\Desktop\\GameWebApi\\GameWebApi.csproj",
+        "projectUniqueName": "C:\\GitHub\\Assignment3\\GameWebApi\\GameWebApi.csproj",
         "projectName": "GameWebApi",
-        "projectPath": "C:\\Users\\Juuso\\Desktop\\GameWebApi\\GameWebApi.csproj",
+        "projectPath": "C:\\GitHub\\Assignment3\\GameWebApi\\GameWebApi.csproj",
         "packagesPath": "C:\\Users\\Juuso\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Juuso\\Desktop\\GameWebApi\\obj\\",
+        "outputPath": "C:\\GitHub\\Assignment3\\GameWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Juuso\\AppData\\Roaming\\NuGet\\NuGet.Config",

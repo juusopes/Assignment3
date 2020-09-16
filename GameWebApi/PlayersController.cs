@@ -12,6 +12,11 @@ namespace GameWebApi.Controllers
         private readonly ILogger<PlayersController> _logger;
         private readonly IRepository _repository;
 
+        public void ConfigureServices()
+        {
+
+        }
+
         [HttpGet("{i:int}")]
         public int Test(int i)
         {
@@ -40,18 +45,36 @@ namespace GameWebApi.Controllers
 
         [HttpPost]
         [Route("create")]
-        public Task<Player> Create([FromBody] NewPlayer player)
+        public async Task<Player> Create([FromBody] NewPlayer player)
         {
-            Player newPlayer = new Player() { Id = Guid.NewGuid(), Name = player.Name };
+            DateTime localDate = DateTime.UtcNow;
 
-            return _repository.Create(newPlayer);
+            Player new_player = new Player();
+            new_player.Name = player.Name;
+            new_player.Id = Guid.NewGuid();
+            new_player.Score = 0;
+            new_player.Level = 0;
+            new_player.IsBanned = false;
+            new_player.CreationTime = localDate;
+
+            await _repository.Create(new_player);
+            return new_player;
         }
 
         [HttpPost]
-        [Route("delete")]
-        public Task<Player> Delete([FromBody] Guid id)
+        [Route("modify/{id:Guid}")]
+        public async Task<Player> Modify(Guid id, [FromBody] ModifiedPlayer player)
         {
-            return _repository.Delete(id);
+            await _repository.Modify(id, player);
+            return null;
+        }
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<Player> Delete(Guid id)
+        {
+            await _repository.Delete(id);
+            return null;
         }
     }
 }
