@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class FileRepository : IRepository
 {
-    string filePath = @"C:\Users\Juuso\Desktop\GameWebApi\game-dev.txt";
+    string filePath = @"C:\GitHub\Assignment3\GameWebApi\game-dev.txt";
     public Task<Player> Get(Guid id)
     {
         string jsonToBeDeserialized = System.IO.File.ReadAllText(filePath);
@@ -100,15 +100,14 @@ public class FileRepository : IRepository
         List<Player> players = JsonConvert.DeserializeObject<List<Player>>(jsonToBeDeserialized);
         Player searchedPlayer = new Player();
 
-        foreach (Player playeri in players)
+        foreach (Player p in players)
         {
-            // if player was found
-            if (playeri.Id == id)
+            if (p.Id == id)
             {
-                playeri.Score = player.Score;
+                p.Score = player.Score;
                 string output = JsonConvert.SerializeObject(players);
                 File.WriteAllText(filePath, output);
-                return Task.FromResult<Player>(playeri);
+                return Task.FromResult<Player>(p);
             }
         }
 
@@ -122,12 +121,12 @@ public class FileRepository : IRepository
         List<Player> players = JsonConvert.DeserializeObject<List<Player>>(jsonToBeDeserialized);
         Player searchedPlayer = new Player();
 
-        foreach (Player playeri in players)
+        foreach (Player p in players)
         {
-            if (playeri.Id == id)
+            if (p.Id == id)
             {
-                searchedPlayer = playeri;
-                players.Remove(playeri);
+                searchedPlayer = p;
+                players.Remove(p);
                 string output = JsonConvert.SerializeObject(players);
                 File.WriteAllText(filePath, output);
                 return Task.FromResult<Player>(searchedPlayer);
