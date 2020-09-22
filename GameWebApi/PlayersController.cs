@@ -12,17 +12,6 @@ namespace GameWebApi.Controllers
         private readonly ILogger<PlayersController> _logger;
         private readonly IRepository _repository;
 
-        public void ConfigureServices()
-        {
-
-        }
-
-        [HttpGet("{i:int}")]
-        public int Test(int i)
-        {
-            return i + i;
-        }
-
         public PlayersController(ILogger<PlayersController> logger, IRepository repository)
         {
             _logger = logger;
@@ -30,17 +19,21 @@ namespace GameWebApi.Controllers
         }
 
         [HttpGet]
+        [Route("getall")]
+        public Task<Player[]> GetAll(int minlevel)
+        {
+            // return _repository.GetAll();
+            Console.WriteLine("in the controllerrrrrrrrrrrrrrrrrrrrrr");
+            return Task.FromResult(new Player[] { new Player() { Level = minlevel },
+                                    new Player() { Level = (minlevel + 1) } });
+        }
+
+        [NotFoundException]
+        [HttpGet]
         [Route("{playerId}")]
         public Task<Player> Get(Guid id)
         {
             return _repository.Get(id);
-        }
-
-        [HttpGet]
-        [Route("getall")]
-        public Task<Player[]> GetAll()
-        {
-            return _repository.GetAll();
         }
 
         [HttpPost]

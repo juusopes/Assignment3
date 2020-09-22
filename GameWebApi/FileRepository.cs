@@ -136,4 +136,35 @@ public class FileRepository : IRepository
         searchedPlayer.Name = "not Found";
         return Task.FromResult<Player>(searchedPlayer);
     }
+
+    public Task<Item> CreateItem(Guid playerId, Item item)
+    {
+        throw new NotImplementedException();
+    }
+    public Task CreateItem()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Item> GetItem(Guid playerId, Guid itemId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Item[]> GetAllItems(Guid playerId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Item> UpdateItem(Guid playerId, Item item)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Item> DeleteItem(Guid playerId, Item item)
+    {
+        throw new NotImplementedException();
+    }
+
+
 }
